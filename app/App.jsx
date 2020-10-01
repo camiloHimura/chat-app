@@ -3,6 +3,8 @@ import './App.css';
 import Nav from "./components/Nav";
 import Messages from "./components/Messages";
 import InputHandler from "./components/InputHandler";
+import Modal from "./components/Modal";
+import Settings from "./components/Settings";
 
 function App(){
   
@@ -11,6 +13,10 @@ function App(){
               <Nav name="My Chat"/>
               <Messages/>
               <InputHandler/>
+              
+              <Modal isOpen={true}>
+                <Settings isOpen={true}/>
+              </Modal>
             </div>
           </div>
 }

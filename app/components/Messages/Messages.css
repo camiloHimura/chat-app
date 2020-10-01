@@ -1,6 +1,18 @@
 .messsages{
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
   box-sizing: border-box;
   padding: var(--gPadding);
   background: var(--white);
+  justify-content: flex-end;
   height: calc(100% - (var(--nav-height) + var(--handler-height)));
+}
+
+.messsages > *{
+  margin-bottom: 20px;
+}
+
+.messsages:first-child{
+  margin-bottom: 0px;
 }

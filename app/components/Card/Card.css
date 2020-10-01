@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  margin-bottom: var(--gPadding);
+}
+.card.external {
+  justify-content: flex-start;
+}
+
+.card > div{
+  display: inline-block;
+  padding: var(--gPadding);
+  background: var(--blue-1);
+}

@@ -10,21 +10,24 @@
   --blue: #049DD9;
   --blue-2: #41C0F2;
   --blue-1: #91D7F2;
+  
   --light-gray : #b9b9b9;
   --light-gray-4 : rgba(185, 185, 185, 0.4);;
   --white-6 : hsla(0, 0%, 100%, 0.6);
   
   --nav-height: 40px;
-  --input-radius: 14px;
   --button-radius: 10px;
   --handler-height: 40px;
   --paragraph-color: #4a4a4a;
   --color-border: var(--light-gray);
-
+  /* General container */
   --gPadding: 10px;
+  --input-radius: 14px;
   --container-width: 100vw;
   --container-margin: 0vh;
   --container-height: calc(100vh - var(--container-margin));
+  /* Modal container */
+  --modal-container-width: 50%;
 }
 
 .MyChat{
