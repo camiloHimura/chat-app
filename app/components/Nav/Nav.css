@@ -1,0 +1,27 @@
+nav{
+  display: flex;
+  height: var(--nav-height);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+}
+
+nav h1{
+  color: var(--white);
+}
+
+nav .button{
+  position: absolute;
+  right: var(--gPadding);
+  background: var(--blue-2);
+}
+
+nav .button:hover{
+  color: var(--white);
+  background: var(--blue-3);
+}
+
+nav .button:active{
+  background: var(--blue-4);
+}

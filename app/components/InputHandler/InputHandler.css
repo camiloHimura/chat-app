@@ -1,0 +1,32 @@
+.inputHandler{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--handler-height);
+  background: var(--blue-1);
+}
+
+.inputHandler input{
+  height: 60%;
+  border: none;
+  outline: none;
+  width: calc(80%);
+  box-sizing: border-box;
+  padding: 0px var(--gPadding);
+  border-radius: var(--input-radius);
+}
+
+.inputHandler .button{
+  width: calc(10% - var(--gPadding));
+  margin-left: var(--gPadding);
+  background: var(--blue-2);
+}
+
+.inputHandler .button:hover{
+  color: var(--white);
+  background: var(--blue-3);
+}
+
+.inputHandler .button:active{
+  background: var(--blue-4);
+}

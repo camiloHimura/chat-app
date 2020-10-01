@@ -2,34 +2,16 @@ import LStorage from './LStorage';
 import {LSTORAGE_INVALID_KEY} from '../contans/ErrorMessages';
 
 describe('Invalid key', () => {
-  it('save', () => {
-    try{
-      LStorage.set([], 'value');
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    }catch(e){
-      expect(e).toEqual(Error(LSTORAGE_INVALID_KEY));
-    }
+  it('save, throw error', () => {
+    expect(() => LStorage.set([], 'value')).toThrow(Error(LSTORAGE_INVALID_KEY));
   })
 
-  it('has', () => {
-    try{
-      LStorage.has([]);
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    }catch(e){
-      expect(e).toEqual(Error(LSTORAGE_INVALID_KEY));
-    }
+  it('has, throw error', () => {
+    expect(() => LStorage.has([])).toThrow(Error(LSTORAGE_INVALID_KEY));
   })
-
-  it('remove', () => {
-    try{
-      LStorage.remove({});
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    }catch(e){
-      expect(e).toEqual(Error(LSTORAGE_INVALID_KEY));
-    }
+  
+  it('remove, throw error', () => {
+    expect(() => LStorage.remove({})).toThrow(Error(LSTORAGE_INVALID_KEY));
   })
 })
 

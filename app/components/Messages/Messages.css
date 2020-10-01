@@ -1,0 +1,6 @@
+.messsages{
+  box-sizing: border-box;
+  padding: var(--gPadding);
+  background: var(--white);
+  height: calc(100% - (var(--nav-height) + var(--handler-height)));
+}
