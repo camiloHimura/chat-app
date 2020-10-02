@@ -2,19 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from "react-dom";
 import './Modal.css';
+import {connect} from "react-redux";
+import {toggleSettings} from "../../state/actions";
+import Button from "../Button";
 
-function Modal(props) {
-  const {isOpen} = props;
+const mapStateToProps = state => ({
+  isSettingsOpen: state.settings.open,
+});
+
+const mapDispachToProps = dispatch => ({
+  toggleSettings: format => dispatch(toggleSettings(format)),
+});
+
+export function Modal(props) {
+  const {isSettingsOpen, toggleSettings} = props;
   const elemt = document.getElementById('modal');
 
   let Component = <div className='modal'>
                     <div className='body'>
-                      <button className='close'>X</button>
+                      <Button className='close' text='X' onClick={() => toggleSettings(false)}/>
                       {props.children}
                     </div>
                   </div>
 
-  if (!isOpen) {
+  if (!isSettingsOpen) {
     Component = null;
   }
 
@@ -25,8 +36,8 @@ function Modal(props) {
 }
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  toggleSettings: PropTypes.func.isRequired,
 }
 
-export default Modal;
+export default connect(mapStateToProps, mapDispachToProps)(Modal);

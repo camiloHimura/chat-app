@@ -1,4 +1,4 @@
-import {setUserNameAction, setTimeFormat, setShortcut, resetSettings} from '../actions';
+import {setUserNameAction, setTimeFormat, setShortcut, resetSettings, toggleSettings} from '../actions';
 import settingsReducer from './settingsReducer';
 import { SETTINGS } from '../../contans';
 
@@ -12,11 +12,6 @@ const settings = {
 }
 
 describe('standar initial state', () => {
-  it('return default store', () => {
-    const newState = settingsReducer(undefined, {});
-    expect(newState).toEqual(SETTINGS.DEFAULTS);
-  });
-
   it('set userName', () => {
     const newState = settingsReducer(undefined, setUserNameAction(settings.userName));
     expect(newState.userName).toBe(settings.userName);
@@ -32,9 +27,19 @@ describe('standar initial state', () => {
     expect(newState.shortcut).toBe(settings.shortcut); 
   });
 
+  it('toogle true', () => {
+    const newState = settingsReducer(undefined, toggleSettings(true));
+    expect(newState.open).toBe(true); 
+  });
+
+  it('toogle false', () => {
+    const newState = settingsReducer(undefined, toggleSettings(false));
+    expect(newState.open).toBe(false); 
+  });
+
   it('clear local storage', () => {
-    const newState = settingsReducer(settings, resetSettings());
-    expect(newState).toEqual(SETTINGS.DEFAULTS);
+    const newState = settingsReducer({...settings, open: true}, resetSettings());
+    expect(newState).toEqual({...SETTINGS.DEFAULTS, open: true});
   });
 });
 
@@ -47,7 +52,7 @@ describe('localStorage initial state', () => {
 
   it('return default store', () => {
 
-    const newState = settingsReducer(undefined, {});
+    const newState = settingsReducer(undefined, {open: true});
     expect(newState.title).toBe(settings.title);
     expect(newState.url).toBe(settings.url);
     expect(newState.tags).toEqual(settings.tags);

@@ -28,7 +28,7 @@
   --container-height: calc(100vh - var(--container-margin));
   --paragraph-margin: 10px;
   /* Modal container */
-  --modal-container-width: 50%;
+  --modal-container-width: 90%;
 }
 
 .MyChat{
@@ -122,10 +122,14 @@ button{
     --handler-height: 60px;
     --container-width: 90vw;
     --container-margin: 10vh;
+    --modal-container-width: 60%;
   }
 }
 
 @media screen and (min-width: 992px) {
+  :root{
+    --modal-container-width: 40%;
+  }
 }
 
 @media screen and (min-width: 1280px) {

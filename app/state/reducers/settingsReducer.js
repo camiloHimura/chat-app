@@ -1,4 +1,4 @@
-import { SET_USER_NAME, SET_TIME_FORMAT, SET_SHORTCUT, RESET_SETTINGS } from '../actions/actions-types';
+import { SET_USER_NAME, SET_TIME_FORMAT, SET_SHORTCUT, RESET_SETTINGS, SET_TOGGLE } from '../actions/actions-types';
 import { SETTINGS } from '../../contans';
 import LStorage from '../../utils/LStorage';
 
@@ -8,17 +8,20 @@ export default function localStorageReducer(state, action) {
   }
 
   switch(action.type){
+    case SET_TOGGLE:
+      return {...state, open: action.payload};
+    
     case SET_USER_NAME:
-      return {...state, userName: action.payload}
+      return {...state, userName: action.payload};
     
     case SET_TIME_FORMAT:
-      return {...state, timeFormat: action.payload}
+      return {...state, timeFormat: action.payload};
     
     case SET_SHORTCUT:
-      return {...state, shortcut: action.payload}
+      return {...state, shortcut: action.payload};
     
     case RESET_SETTINGS:
-      return SETTINGS.DEFAULTS
+      return {...SETTINGS.DEFAULTS, open: state.open};
     
     default: 
         return state;

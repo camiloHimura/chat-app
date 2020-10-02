@@ -14,8 +14,8 @@ function App(){
               <Messages/>
               <InputHandler/>
               
-              <Modal isOpen={true}>
-                <Settings isOpen={true}/>
+              <Modal>
+                <Settings/>
               </Modal>
             </div>
           </div>
