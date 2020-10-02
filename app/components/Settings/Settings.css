@@ -13,6 +13,7 @@
   left: -26px;
   width: 16px;
   height: 16px;
+  opacity: 0.4;
   position: absolute;
   border-radius: 50%;
   background: var(--gray);
@@ -31,4 +32,18 @@
 .settings input[type='radio']{
   width: 0px;
   visibility: hidden;
+}
+
+.settings .reset{
+  color: var(--white);
+  background: var(--blue-2);
+}
+
+.settings .reset:hover{
+  color: var(--white);
+  background: var(--blue-3);
+}
+
+.settings .reset:active{
+  background: var(--blue-4);
 }

@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
 
-import localStorage from "./localStorageReducer";
+import settings from "./settingsReducer";
 
 export default combineReducers({
-  localStorage
+  settings
 });

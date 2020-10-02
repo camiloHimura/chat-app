@@ -1,19 +1,19 @@
-import { SET_LS_USER_NAME, SET_LS_TIME_FORMAT, SET_LS_SHORTCUT, CLEAR_LS} from "./actions-types";
+import { SET_USER_NAME, SET_TIME_FORMAT, SET_SHORTCUT, RESET_SETTINGS} from "./actions-types";
 
 
 //Local Storage actions
-export function setLsUserNameAction(payload) {
-return {type: SET_LS_USER_NAME, payload}
+export function setUserNameAction(payload) {
+return {type: SET_USER_NAME, payload}
 }
 
-export function setLsTitleFormat(payload) {
-return {type: SET_LS_TIME_FORMAT, payload}
+export function setTimeFormat(payload) {
+return {type: SET_TIME_FORMAT, payload}
 }
 
-export function setLsShortcut(payload) {
-return {type: SET_LS_SHORTCUT, payload}
+export function setShortcut(payload) {
+return {type: SET_SHORTCUT, payload}
 }
 
-export function clearLsAction(payload) {
-return {type: CLEAR_LS, payload}
+export function resetSettings(payload) {
+return {type: RESET_SETTINGS, payload}
 }

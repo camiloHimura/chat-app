@@ -1,3 +1,3 @@
 
-export {default as localStorageMiddleware} from "./localStorageMiddleware";
+export {default as settingsMiddleware} from "./settingsMiddleware";
 
