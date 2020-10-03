@@ -1,5 +1,5 @@
 .messsages{
-  display: flex;
+  /* display: flex; */
   overflow: auto;
   flex-direction: column;
   box-sizing: border-box;
@@ -13,6 +13,6 @@
   margin-bottom: 20px;
 }
 
-.messsages:first-child{
+.messsages div:last-child{
   margin-bottom: 0px;
 }

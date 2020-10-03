@@ -1,4 +1,4 @@
-import {setUserNameAction, setTimeFormat, setShortcut, resetSettings, toggleSettings} from '../actions';
+import {setUserName, setTimeFormat, setShortcut, resetSettings, toggleSettings} from '../actions';
 import settingsReducer from './settingsReducer';
 import { SETTINGS } from '../../contans';
 
@@ -13,7 +13,7 @@ const settings = {
 
 describe('standar initial state', () => {
   it('set userName', () => {
-    const newState = settingsReducer(undefined, setUserNameAction(settings.userName));
+    const newState = settingsReducer(undefined, setUserName(settings.userName));
     expect(newState.userName).toBe(settings.userName);
   });
 

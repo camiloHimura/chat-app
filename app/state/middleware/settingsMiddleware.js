@@ -5,8 +5,14 @@ import LStorage from "../../utils/LStorage";
 export default function settingsMiddleware({ dispatch }) {
   return function(next) {
     return function(action) {
+      
       if(action.type === RESET_SETTINGS) {
         LStorage.set(SETTINGS.LS_NAME, SETTINGS.DEFAULTS);
+      }
+
+      if(action.type === SET_USER_NAME) {
+        const data = LStorage.get(SETTINGS.LS_NAME) || {};
+        LStorage.set(SETTINGS.LS_NAME, {...data, userName: action.payload});
       }
       
       if(action.type === SET_TIME_FORMAT) {

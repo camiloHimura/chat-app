@@ -1,17 +1,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Messages from './Messages';
+import { Messages } from './Messages';
 import Card from '../Card';
 
 describe('Messages render', () => {
-  const Component = shallow(<Messages name={name}/>)
-
-  it('rendering name', () => {
-    expect(Component).toBeTruthy();
-  });
-
-  it('card child', () => {
-    expect(Component.find(Card)).toBeTruthy();
+  let component;
+  const card = {date: 1234, userName: 'name test', text: '', url: '', isLocal: true}
+  
+  it('render Card childern', () => {
+    component = setUp({messages: [card, card, card]})
+    expect(component.find(Card).length).toBe(3);
   });
 
 });
+
+function setUp(props = {}) {
+  const initialProps = {
+    messages: [], ...props
+  }
+  return shallow(<Messages {...initialProps}/>);
+};

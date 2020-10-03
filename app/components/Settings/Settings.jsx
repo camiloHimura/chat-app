@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Settings.css';
 import Button from './../Button';
 import {connect} from "react-redux";
-import {setTimeFormat, setShortcut, resetSettings} from "../../state/actions";
+import {setTimeFormat, setShortcut, resetSettings, setUserName} from "../../state/actions";
 import {SETTINGS} from './../../contans';
 
 const mapStateToProps = state => ({
@@ -13,13 +13,14 @@ const mapStateToProps = state => ({
 });
 
 const mapDispachToProps = dispatch => ({
-  setShortcut: format => dispatch(setShortcut(format)),
-  resetSettings: format => dispatch(resetSettings(format)),
+  resetSettings: () => dispatch(resetSettings()),
+  setUserName: name => dispatch(setUserName(name)),
+  setShortcut: isOn => dispatch(setShortcut(isOn)),
   setTimeFormat: format => dispatch(setTimeFormat(format)),
 });
 
 export function Settings(props){
-  const {shortcut, timeFormat, setTimeFormat, setShortcut, resetSettings} = props;
+  const {userName, shortcut, timeFormat, setTimeFormat, setShortcut, resetSettings, setUserName} = props;
 
   function onTimeChange(event) {
     setTimeFormat(event.target.value);
@@ -33,7 +34,16 @@ export function Settings(props){
     resetSettings();
   }
 
+  function onChanUserName(event) {
+    console.log('event.target.value', event.target.value)
+    setUserName(event.target.value);
+  }
+
   return  <div className='settings'>
+            <h2 className='--marginBottom'>User Name</h2>
+            <div className='--flex --marginBottom'>
+              <input type='text' data-test="userName" value={userName} onChange={onChanUserName}/>
+            </div>
             <h2 className='--marginBottom'>Clock display</h2>
             <div className='--flex --marginBottom'>
               <div className='--marginRight'>

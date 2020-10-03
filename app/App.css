@@ -12,7 +12,7 @@
   --blue-1: #91D7F2;
   
   --light-gray : #b9b9b9;
-  --light-gray-4 : rgba(185, 185, 185, 0.4);;
+  --light-gray-4 : #cecece;
   --white-6 : hsla(0, 0%, 100%, 0.6);
   
   --nav-height: 40px;
@@ -41,6 +41,10 @@
 
 h2{
   font-size: 16px;
+}
+
+input{
+  outline: none;
 }
 
 .--flex{

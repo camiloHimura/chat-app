@@ -18,6 +18,7 @@
   border-radius: 50%;
   background: var(--gray);
 }
+
 .settings input:checked + label::after{
   content: '';
   top: 4px;
@@ -27,6 +28,12 @@
   position: absolute;
   border-radius: 50%;
   background: var(--blue);
+}
+
+.settings input[type='text']{
+  padding: calc(var(--gPadding) / 2);
+  border-radius: var(--input-radius);
+  border: 1px solid var(--light-gray-4);
 }
 
 .settings input[type='radio']{

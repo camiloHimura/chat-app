@@ -6,6 +6,7 @@ import { findByTestAttr } from '../../utils/test';
 const setShortcut = jest.fn();
 const resetSettings = jest.fn();
 const setTimeFormat = jest.fn();
+const setUserName = jest.fn();
 
 describe('Settings render', () => {
   let component;
@@ -61,6 +62,14 @@ describe('Settings render', () => {
       const input = findByTestAttr(component, 'btn-reset');
       input.simulate('click');
       expect(resetSettings).toHaveBeenCalled();
+    });
+
+    it('changing setUserName', () => {
+      const value = 'user test';
+      component = setUp({setUserName});
+      const input = findByTestAttr(component, 'userName');
+      input.simulate('change', { target: { value } });
+      expect(setUserName).toHaveBeenCalledWith(value);
     });
   });
 });

@@ -6,13 +6,13 @@
   background: var(--blue-1);
 }
 
-.inputHandler input{
+.inputHandler textarea{
   height: 60%;
   border: none;
   outline: none;
   width: calc(80%);
   box-sizing: border-box;
-  padding: 0px var(--gPadding);
+  padding: 10px var(--gPadding) 0px;
   border-radius: var(--input-radius);
 }
 
