@@ -8,8 +8,19 @@
   justify-content: flex-start;
 }
 
-.card > div{
-  display: inline-block;
-  padding: var(--gPadding);
+.card div.cont{
+  max-width: 60%;
+}
+
+.card .metaData{
+  width: 130px;
+  display: block;
+  font-size: 12px;
+  margin-left: auto;
+  color: var(--light-gray);
+}
+.card div.text{
+  white-space: pre-wrap;
   background: var(--blue-1);
+  padding: calc(var(--gPadding) / 2);
 }

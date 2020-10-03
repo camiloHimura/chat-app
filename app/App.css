@@ -13,6 +13,7 @@
   
   --light-gray : #b9b9b9;
   --light-gray-4 : #cecece;
+  /* --light-gray-4 : #a5a3a3; */
   --white-6 : hsla(0, 0%, 100%, 0.6);
   
   --nav-height: 40px;
@@ -33,7 +34,7 @@
 
 .MyChat{
   display: flex;
-  font-size: 12px;
+  font-size: 14px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

@@ -12,11 +12,16 @@ describe('Messages render', () => {
     expect(component.find(Card).length).toBe(3);
   });
 
+  it('passing down timeFormat', () => {
+    component = setUp({messages: [card], timeFormat: '24'})
+    expect(component.find(Card).at(0).props().timeFormat).toBe('24');
+  });
+
 });
 
 function setUp(props = {}) {
   const initialProps = {
-    messages: [], ...props
+    messages: [], timeFormat: '12', ...props
   }
   return shallow(<Messages {...initialProps}/>);
 };
