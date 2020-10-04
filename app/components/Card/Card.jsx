@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
-import { FormatDate } from '../../utils';
+import { FormatDate, UrlValidator } from '../../utils';
 import { SETTINGS } from '../../contans';
+import Img from '../Img';
 
 function Card(props) {
   const {date, userName, text, isLocal, timeFormat} = props;
@@ -10,11 +11,14 @@ function Card(props) {
 
   return  <div className={`card ${!isLocal? 'external': ''}`}>
             <div className='cont'>
-              <span className='metaData' data-test="metaData">
+              <span className='metaData' data-test='metaData'>
                 {userName}, {FormatDate({date, isHour12})}
               </span>
               <div className='text'>
-                <p data-test="text">{text}</p>
+                {UrlValidator(text)? 
+                  <Img src={text}/> :
+                  <p data-test='text'>{text}</p>
+                }
               </div>
             </div>
           </div>

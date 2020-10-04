@@ -1,2 +1,2 @@
-import InputHandler from "./InputHandler.jsx";
+import InputHandler from './InputHandler.jsx';
 export default InputHandler;

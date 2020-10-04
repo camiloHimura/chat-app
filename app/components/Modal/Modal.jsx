@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { createPortal } from "react-dom";
+import { createPortal } from 'react-dom';
 import './Modal.css';
-import {connect} from "react-redux";
-import {toggleSettings} from "../../state/actions";
-import Button from "../Button";
+import {connect} from 'react-redux';
+import {toggleSettings} from '../../state/actions';
+import Button from '../Button';
 
 const mapStateToProps = state => ({
   isSettingsOpen: state.settings.open,

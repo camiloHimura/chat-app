@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Messages.css';
 import Card from './../Card';
-import {connect} from "react-redux";
+import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
   messages: state.messages,

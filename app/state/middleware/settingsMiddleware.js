@@ -1,6 +1,6 @@
-import { SET_USER_NAME, SET_TIME_FORMAT, SET_SHORTCUT, RESET_SETTINGS } from "../actions/actions-types";
+import { SET_USER_NAME, SET_TIME_FORMAT, SET_SHORTCUT, RESET_SETTINGS } from '../actions/actions-types';
 import { SETTINGS } from '../../contans';
-import LStorage from "../../utils/LStorage";
+import LStorage from '../../utils/LStorage';
 
 export default function settingsMiddleware({ dispatch }) {
   return function(next) {

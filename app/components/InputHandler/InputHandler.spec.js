@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { InputHandler } from './InputHandler';
 import { findByTestAttr } from '../../utils/test';
 import { KEY_ENTER } from '../../contans';
+jest.mock('socket.io-client');
 
 const addMessage = jest.fn();
 //2020-10-03, 16:13:36

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./Button.css"
+import './Button.css'
 
 function Button(props) {
   const {className = '', text = '', onClick} = props;
 
   return  <button
-            data-test="button"
+            data-test='button'
             className={className}
             onClick={onClick}
           >

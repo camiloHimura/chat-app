@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Settings } from './Settings';
 import { findByTestAttr } from '../../utils/test';
+jest.mock('socket.io-client');
 
 const setShortcut = jest.fn();
 const resetSettings = jest.fn();

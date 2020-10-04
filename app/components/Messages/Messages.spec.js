@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Messages } from './Messages';
 import Card from '../Card';
+jest.mock('socket.io-client');
 
 describe('Messages render', () => {
   let component;

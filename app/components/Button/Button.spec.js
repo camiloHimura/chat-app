@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Button from './Button';
+jest.mock('socket.io-client');
 
 describe('Button render', () => {
   const text = 'test text';

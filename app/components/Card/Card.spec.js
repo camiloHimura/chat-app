@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Card from './Card';
 import { findByTestAttr } from '../../utils/test';
+jest.mock('socket.io-client');
 
 describe('Card render', () => {
   let component;

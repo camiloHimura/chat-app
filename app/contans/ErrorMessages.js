@@ -4,3 +4,4 @@ export const INVALIR_ERROR_TYPE = 'Invalid error type';
 export const NETWORK_ERROR = 'We have problems with the network, reload the page';
 export const DEFAULT = 'Default';
 export const INVALID_DATE = 'Invalid Date';
+export const INVALID_URL = 'Invalid URL';

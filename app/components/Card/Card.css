@@ -10,15 +10,20 @@
 
 .card div.cont{
   max-width: 60%;
+  position: relative;
 }
 
 .card .metaData{
-  width: 130px;
   display: block;
   font-size: 12px;
-  margin-left: auto;
+  text-align: end;
   color: var(--light-gray);
 }
+
+.card.external .metaData{
+  text-align: start;
+}
+
 .card div.text{
   white-space: pre-wrap;
   background: var(--blue-1);

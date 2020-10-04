@@ -45,6 +45,7 @@ module.exports = env => {
       ]
     },
     devServer: {
+      port: process.env.PORT || 3000,
       historyApiFallback: true,
     },
     mode: env.mode || 'development',

@@ -1,7 +1,7 @@
 import {setUserName, setTimeFormat, setShortcut, resetSettings, toggleSettings} from '../actions';
 import settingsReducer from './settingsReducer';
 import { SETTINGS } from '../../contans';
-
+jest.mock('socket.io-client');
 import LStorage from '../../utils/LStorage';
 jest.mock('../../utils/LStorage');
 

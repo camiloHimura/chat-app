@@ -1,2 +1,2 @@
-import Settings from "./Settings.jsx";
+import Settings from './Settings.jsx';
 export default Settings;

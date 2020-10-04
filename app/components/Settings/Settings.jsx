@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Settings.css';
 import Button from './../Button';
-import {connect} from "react-redux";
-import {setTimeFormat, setShortcut, resetSettings, setUserName} from "../../state/actions";
+import {connect} from 'react-redux';
+import {setTimeFormat, setShortcut, resetSettings, setUserName} from '../../state/actions';
 import {SETTINGS} from './../../contans';
 
 const mapStateToProps = state => ({
@@ -42,7 +42,7 @@ export function Settings(props){
   return  <div className='settings'>
             <h2 className='--marginBottom'>User Name</h2>
             <div className='--flex --marginBottom'>
-              <input type='text' data-test="userName" value={userName} onChange={onChanUserName}/>
+              <input type='text' data-test='userName' value={userName} onChange={onChanUserName}/>
             </div>
             <h2 className='--marginBottom'>Clock display</h2>
             <div className='--flex --marginBottom'>
@@ -51,7 +51,7 @@ export function Settings(props){
                   type='radio' 
                   name='hour' 
                   value={SETTINGS.TIME_12}
-                  data-test="time-12"
+                  data-test='time-12'
                   checked={timeFormat === SETTINGS.TIME_12}
                   onChange={onTimeChange}
                 />
@@ -62,7 +62,7 @@ export function Settings(props){
                   type='radio' 
                   name='hour' 
                   value={SETTINGS.TIME_24}
-                  data-test="time-24"
+                  data-test='time-24'
                   checked={timeFormat === SETTINGS.TIME_24}
                   onChange={onTimeChange}
                 />
@@ -79,7 +79,7 @@ export function Settings(props){
                   type='radio' 
                   name='shortcut' 
                   value={true}
-                  data-test="shorcut-true"
+                  data-test='shorcut-true'
                   checked={shortcut}
                   onChange={onShorcutChange}
                 />
@@ -90,7 +90,7 @@ export function Settings(props){
                   type='radio' 
                   name='shortcut' 
                   value={false}
-                  data-test="shorcut-false"
+                  data-test='shorcut-false'
                   checked={!shortcut}
                   onChange={onShorcutChange}
                 />
@@ -105,7 +105,7 @@ export function Settings(props){
                 className='reset' 
                 text='Reset to default' 
                 onClick={onResetSettings}
-                data-test="btn-reset"
+                data-test='btn-reset'
               />
             </div>
           </div>

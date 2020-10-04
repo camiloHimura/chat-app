@@ -9,6 +9,7 @@
 .inputHandler textarea{
   height: 60%;
   border: none;
+  resize: none;
   outline: none;
   width: calc(80%);
   box-sizing: border-box;

@@ -1,5 +1,6 @@
 import {addMessage} from '../actions';
 import messagesReducer from './messagesReducer';
+jest.mock('socket.io-client');
 
 const message = {
   date: Date.now(), 

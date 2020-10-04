@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Nav.css';
-import {connect} from "react-redux";
-import {toggleSettings} from "../../state/actions";
+import {connect} from 'react-redux';
+import {toggleSettings} from '../../state/actions';
 import Button from './../Button';
 
 const mapDispachToProps = dispatch => ({
@@ -12,11 +12,11 @@ export function Nav(props) {
   const {toggleSettings} = props;
 
   return  <nav>
-            <h1 data-test="name">{props.name}</h1>
+            <h1 data-test='name'>{props.name}</h1>
             <Button 
               text='Setting' 
               className='button' 
-              data-test="toggle"
+              data-test='toggle'
               onClick={() => toggleSettings(true)}
             />
           </nav>

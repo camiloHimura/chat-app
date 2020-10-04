@@ -1,4 +1,4 @@
-import { SET_USER_NAME, SET_TIME_FORMAT, SET_SHORTCUT, RESET_SETTINGS, SET_TOGGLE, ADD_MS} from "./actions-types";
+import { SET_USER_NAME, SET_TIME_FORMAT, SET_SHORTCUT, RESET_SETTINGS, SET_TOGGLE, ADD_MS} from './actions-types';
 
 //Setting
 export function setUserName(payload) {
