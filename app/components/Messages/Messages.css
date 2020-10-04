@@ -1,4 +1,4 @@
-.messsages{
+.messages{
   /* display: flex; */
   overflow: auto;
   flex-direction: column;
@@ -9,10 +9,10 @@
   height: calc(100% - (var(--nav-height) + var(--handler-height)));
 }
 
-.messsages > *{
+.messages > *{
   margin-bottom: 20px;
 }
 
-.messsages div:last-child{
+.messages div:last-child{
   margin-bottom: 0px;
 }

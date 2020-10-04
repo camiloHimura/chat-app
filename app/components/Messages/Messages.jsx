@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 export function Messages(props) {
   const {messages, timeFormat} = props;
 
-  return  <div className='messsages'>
+  return  <div className='messages'>
             {messages.map((info, index) => 
               <Card 
                 {...info}

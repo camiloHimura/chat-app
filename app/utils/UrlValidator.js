@@ -1,12 +1,23 @@
 import {INVALID_URL} from '../contans/ErrorMessages';
 
-export default function (url) {
-  if (typeof url !== 'string') {
+export default function (data) {
+  if (typeof data !== 'string') {
     throw Error(INVALID_URL);
   }
 
+  if (data === '') {
+    return false;
+  }
+
   let isURL = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
-  let isValidFormat = /(png|jpg|gif)+$/i;
   
-  return isURL.test(url) && isValidFormat.test(url);
+  if (!isURL.test(data)) {
+    return false;
+  }
+  
+  const url = new URL(data);
+  let isValidFormat = /(png|jpg|gif)+$/i;
+
+  //url.pathname remove query string
+  return isValidFormat.test(url.pathname);
 }

@@ -16,7 +16,7 @@ function Card(props) {
               </span>
               <div className='text'>
                 {UrlValidator(text)? 
-                  <Img src={text}/> :
+                  <Img data-test='img' src={text}/> :
                   <p data-test='text'>{text}</p>
                 }
               </div>

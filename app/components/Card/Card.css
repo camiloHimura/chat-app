@@ -25,7 +25,15 @@
 }
 
 .card div.text{
+  position: relative;
+  word-break: break-all;
   white-space: pre-wrap;
-  background: var(--blue-1);
+  background: var(--light-gray-4);
   padding: calc(var(--gPadding) / 2);
+  border-radius: 6px 6px 0px 6px;
+}
+
+.card.external div.text{
+  background: var(--light-gray-4);
+  border-radius: 6px 6px 6px 0px;
 }

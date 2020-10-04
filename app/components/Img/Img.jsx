@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Img.css';
+import Loader from '../Loader';
 
 function Img(props) {
-  const [src, setSrc] = React.useState(
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII='
-  );
+  const [src, setSrc] = React.useState(null);
   
   React.useEffect(() => {
-    let iImage = document.createElement('img');
+    let iImage = new Image();
     iImage.src = props.src;
     iImage.onload = () => {
       setSrc(props.src);
@@ -16,7 +15,7 @@ function Img(props) {
   }, []);
   
   return <div className='contImg'>
-          <img data-test='img' src={src}/>
+          {src? <img data-test='img' src={src}/>: <Loader data-test='loader'/>}
         </div> 
 }
 

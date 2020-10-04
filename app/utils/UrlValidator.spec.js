@@ -10,8 +10,12 @@ describe('UrlValidator', () => {
     expect(UrlValidator('https://www.google.com/')).toBe(false);
   });
 
-  it('valid png, true', () => {
+  it('valid jpg, true', () => {
     expect(UrlValidator('https://w.wallha.com/ws/9/QsK4Si81.jpg')).toBe(true);
+  });
+
+  it('valid jpg with query string, true', () => {
+    expect(UrlValidator('https://w.wallha.com/ws/9/QsK4Si81.jpg?test=123')).toBe(true);
   });
 
   describe('Invalid key', () => {

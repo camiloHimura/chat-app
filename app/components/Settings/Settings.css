@@ -43,7 +43,7 @@
 
 .settings .reset{
   color: var(--white);
-  background: var(--blue-2);
+  background: var(--orange);
 }
 
 .settings .reset:hover{

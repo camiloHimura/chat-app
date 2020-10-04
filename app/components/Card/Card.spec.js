@@ -2,7 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Card from './Card';
 import { findByTestAttr } from '../../utils/test';
+import { json } from 'express';
 jest.mock('socket.io-client');
+//doesn't exist in jstDom
+window.URL = jest.fn();
 
 describe('Card render', () => {
   let component;
@@ -14,7 +17,7 @@ describe('Card render', () => {
     text: 'text test',
     userName: 'name test', 
   }
-
+  
   it('rendering info and text, 24 hours', () => {
     component = setUp({...info});
     const text = findByTestAttr(component, 'text');
@@ -31,6 +34,18 @@ describe('Card render', () => {
     
     expect(text.text()).toBe(info.text);
     expect(metaData.text()).toBe(`${info.userName}, 4:13:36 PM`);
+  });
+  
+  it('rendering img', () => {
+    const text = 'https://w.wallha.com/ws/9/QsK4Si81.jpg';
+    window.URL = jest.fn().mockReturnValue({
+      pathname: text
+    });
+
+    component = setUp({...info, text});
+    const img = findByTestAttr(component, 'img');
+    
+    expect(img.props().src).toBe(text);
   });
 
 });

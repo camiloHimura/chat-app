@@ -1,16 +1,33 @@
 const path = require('path');
 const express = require('express');
+const http = require("http");
+const socketIo = require("socket.io");
+const { IO_BROADCAST, IO_SEND_MESSAGE } = require('./contans');
 
 const publicPath = path.join(__dirname, '..', 'public')
-const App = express();
-const port = process.env.PORT || 3000;
+const app = express();
+const port = process.env.API_PORT || 8082;
 
-App.use(express.static(publicPath));
+app.use(express.static(publicPath));
 
-App.get('*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 })
 
-App.listen(port, () => {
-  console.log('Listening port', port)
-})
+const server = http.createServer(app);
+const io = socketIo(server);
+
+io.on("connection", (socket) => {
+  console.log("New client connected");
+
+  socket.on(IO_SEND_MESSAGE, data => {
+    console.log(IO_SEND_MESSAGE, data);
+    socket.broadcast.emit(IO_BROADCAST, {...data, isLocal: false});
+  });
+
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+  });
+});
+
+server.listen(port, () => console.log(`Listening on port ${port}`));
