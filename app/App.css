@@ -24,12 +24,15 @@
   /* General container */
   --gPadding: 10px;
   --input-radius: 14px;
+  --container-radius: 0px;
   --container-width: 100vw;
   --container-margin: 0vh;
   --container-height: calc(100vh - var(--container-margin));
   --paragraph-margin: 10px;
   /* Modal container */
   --modal-container-width: 90%;
+  /* Card */
+  --card-width: 80%
 }
 
 .MyChat{
@@ -40,8 +43,12 @@
   justify-content: center;
 }
 
-h2{
+h1{
   font-size: 16px;
+}
+
+h2{
+  font-size: 14px;
 }
 
 input{
@@ -100,7 +107,7 @@ button{
 
 .container {
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: var(--container-radius);
   width: var(--container-width);
   height: var(--container-height);
   margin-top: calc(var(--container-margin) / 2);
@@ -128,7 +135,18 @@ button{
     --container-width: 90vw;
     --container-margin: 10vh;
     --modal-container-width: 60%;
+    --container-radius: 6px;
+    --card-width: 60%;
   }
+
+  h1{
+    font-size: 18px;
+  }
+  
+  h2{
+    font-size: 16px;
+  }
+  
 }
 
 @media screen and (min-width: 992px) {

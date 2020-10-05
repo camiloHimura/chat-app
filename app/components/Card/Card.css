@@ -9,8 +9,8 @@
 }
 
 .card div.cont{
-  max-width: 60%;
   position: relative;
+  max-width: var(--card-width);
 }
 
 .card .metaData{

@@ -12,3 +12,7 @@
 .messages > *{
   margin-bottom: 20px;
 }
+
+/* .messages div:last-child{
+  margin-bottom: 0px;
+} */

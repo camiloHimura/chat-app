@@ -35,7 +35,6 @@ export function Settings(props){
   }
 
   function onChanUserName(event) {
-    console.log('event.target.value', event.target.value)
     setUserName(event.target.value);
   }
 

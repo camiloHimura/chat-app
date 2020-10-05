@@ -22,7 +22,6 @@ export function InputHandler(props) {
 
   useEffect(() => {
     SOCKET.on(IO_BROADCAST, data => {
-      console.log('listening ', IO_BROADCAST, data);
       addMessage(data);
     });
 

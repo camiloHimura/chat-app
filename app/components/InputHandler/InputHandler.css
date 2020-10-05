@@ -11,14 +11,14 @@
   border: none;
   resize: none;
   outline: none;
-  width: calc(80%);
+  width: calc(80% - 57px);
   box-sizing: border-box;
-  padding: 10px var(--gPadding) 0px;
+  padding: 4px var(--gPadding) 0px;
   border-radius: var(--input-radius);
 }
 
 .inputHandler .button{
-  width: calc(10% - var(--gPadding));
+  padding: 4px 12px;
   margin-left: var(--gPadding);
   background: var(--blue-2);
 }
@@ -30,4 +30,14 @@
 
 .inputHandler .button:active{
   background: var(--blue-4);
+}
+
+@media screen and (min-width: 768px) {
+  .inputHandler .button{
+    padding: 6px 10px;
+  }
+
+  .inputHandler textarea{
+    padding: 10px var(--gPadding) 0px;
+  }
 }
