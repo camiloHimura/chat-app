@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Img from './Img';
 import { findByTestAttr } from '../../utils/test';
-import { act } from 'react-dom/test-utils';
 
 jest.mock('socket.io-client');
 
