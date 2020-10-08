@@ -6,7 +6,7 @@ const { IO_BROADCAST, IO_SEND_MESSAGE } = require('./contans');
 
 const publicPath = path.join(__dirname, '..', 'public')
 const app = express();
-const port = process.env.API_PORT || 8082;
+const port = process.env.API_PORT || process.env.PORT || 8082;
 
 app.use(express.static(publicPath));
 

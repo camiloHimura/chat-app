@@ -11,7 +11,8 @@
   border: none;
   resize: none;
   outline: none;
-  width: calc(80% - 57px);
+  font-size: 18px;
+  width: calc(90% - 57px);
   box-sizing: border-box;
   padding: 4px var(--gPadding) 0px;
   border-radius: var(--input-radius);
@@ -38,6 +39,7 @@
   }
 
   .inputHandler textarea{
+    font-size: 16px;
     padding: 10px var(--gPadding) 0px;
   }
 }

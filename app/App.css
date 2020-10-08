@@ -18,7 +18,7 @@
   
   --nav-height: 40px;
   --button-radius: 10px;
-  --handler-height: 40px;
+  --handler-height: 50px;
   --paragraph-color: #4a4a4a;
   --color-border: var(--light-gray);
   /* General container */
@@ -27,7 +27,7 @@
   --container-radius: 0px;
   --container-width: 100vw;
   --container-margin: 0vh;
-  --container-height: calc(100vh - var(--container-margin));
+  --container-height: 100vh;
   --paragraph-margin: 10px;
   /* Modal container */
   --modal-container-width: 90%;
@@ -37,18 +37,14 @@
 
 .MyChat{
   display: flex;
-  font-size: 14px;
+  font-size: 18px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-h1{
-  font-size: 16px;
-}
-
-h2{
-  font-size: 14px;
+h1, h2{
+  font-size: 18px;
 }
 
 input{
@@ -109,8 +105,8 @@ button{
   overflow: hidden;
   border-radius: var(--container-radius);
   width: var(--container-width);
-  height: var(--container-height);
   margin-top: calc(var(--container-margin) / 2);
+  height: calc(var(--container-height) - var(--container-margin));
 }
 
 .title{
@@ -139,10 +135,6 @@ button{
     --card-width: 60%;
   }
 
-  h1{
-    font-size: 18px;
-  }
-  
   h2{
     font-size: 16px;
   }

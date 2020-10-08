@@ -8,6 +8,14 @@ import Modal from './components/Modal';
 import Settings from './components/Settings';
 
 function App() {
+  useEffect(() => {
+    document.documentElement.style.setProperty('--container-height', `${window.innerHeight}px`);
+
+    window.addEventListener('resize', () => {
+      document.documentElement.style.setProperty('--container-height', `${window.innerHeight}px`);
+    });
+  }, []);
+
   return <div className='MyChat'>
             <div className='container'>
               <Nav name='My Chat'/>
