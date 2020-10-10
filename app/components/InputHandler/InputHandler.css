@@ -2,19 +2,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--handler-height);
+  padding: var(--gPadding);
+  max-height: calc(var(--gPadding) + 82px);
   background: var(--blue-1);
 }
 
-.inputHandler textarea{
-  height: 60%;
+.inputHandler .input{
   border: none;
   resize: none;
   outline: none;
+  padding: 10px;
+  overflow: auto;
   font-size: 18px;
+  max-height: 82px;
   width: calc(90% - 57px);
   box-sizing: border-box;
-  padding: 4px var(--gPadding) 0px;
+  background: var(--white);
   border-radius: var(--input-radius);
 }
 
@@ -38,8 +41,7 @@
     padding: 6px 10px;
   }
 
-  .inputHandler textarea{
+  .inputHandler .input{
     font-size: 16px;
-    padding: 10px var(--gPadding) 0px;
   }
 }

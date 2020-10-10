@@ -42,23 +42,28 @@ export function InputHandler(props) {
   }
 
   function validateMessage() {
-    const text = inputText.current.value;
+    const text = inputText.current.innerText;
     if(text === ''){
       return;
     };
 
     const date = Date.now();
     const isLocal = true;
-    inputText.current.value = '';
+    inputText.current.innerText = '';
+    inputText.current.focus();
     addMessage({userName, date, text, isLocal});
   }
 
   return  <div className='inputHandler'>
-            <textarea 
+            <span 
               data-test='text' 
+              className="input" 
+              role="textbox" 
               ref={inputText}
               onKeyDown={keyDown}
-            ></textarea>
+              contentEditable={true}
+            >
+            </span> 
             <Button 
               text='Send'
               className='button'

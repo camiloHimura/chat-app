@@ -1,12 +1,12 @@
 .messages{
   /* display: flex; */
+  height: 100%;
   overflow: auto;
   flex-direction: column;
   box-sizing: border-box;
   padding: var(--gPadding);
   background: var(--white);
   justify-content: flex-end;
-  height: calc(100% - (var(--nav-height) + var(--handler-height)));
 }
 
 .messages > *{

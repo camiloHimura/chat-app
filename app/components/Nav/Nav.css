@@ -1,10 +1,10 @@
 nav{
   display: flex;
-  height: var(--nav-height);
   position: relative;
   align-items: center;
-  justify-content: center;
+  padding: var(--gPadding);
   background: var(--blue);
+  justify-content: center;
 }
 
 nav h1{

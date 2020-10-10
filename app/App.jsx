@@ -9,10 +9,10 @@ import Settings from './components/Settings';
 
 function App() {
   useEffect(() => {
-    document.documentElement.style.setProperty('--container-height', `${window.innerHeight}px`);
+    document.documentElement.style.setProperty('--container-max-height', `${window.innerHeight}px`);
 
     window.addEventListener('resize', () => {
-      document.documentElement.style.setProperty('--container-height', `${window.innerHeight}px`);
+      document.documentElement.style.setProperty('--container-max-height', `${window.innerHeight}px`);
     });
   }, []);
 

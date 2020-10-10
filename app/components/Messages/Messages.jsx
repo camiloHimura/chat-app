@@ -27,10 +27,6 @@ export function Messages(props) {
 
   }, [messages]);
 
-  function getDivMargin() {
-    return Number(getComputedStyle(document.documentElement).getPropertyValue('--gPadding').trim().replace('px', ''))
-  }
-
   return  <div className='messages' ref={contMessages}>
             {messages.map((info, index) => 
               <Card 
