@@ -1,14 +1,14 @@
-.settings{
+.settings {
   --radio-width: 16px;
 }
 
-.settings label{
+.settings label {
   position: relative;
   margin-left: calc(16px + 10px);
 }
 
-.settings label::before{
-  content: '';
+.settings label::before {
+  content: "";
   top: 1px;
   left: -26px;
   width: 16px;
@@ -19,8 +19,8 @@
   background: var(--gray);
 }
 
-.settings input:checked + label::after{
-  content: '';
+.settings input:checked + label::after {
+  content: "";
   top: 4px;
   left: -23px;
   width: 10px;
@@ -30,27 +30,27 @@
   background: var(--blue);
 }
 
-.settings input[type='text']{
+.settings input[type="text"] {
   padding: calc(var(--gPadding) / 2);
   border-radius: var(--input-radius);
   border: 1px solid var(--light-gray-4);
 }
 
-.settings input[type='radio']{
+.settings input[type="radio"] {
   width: 0px;
   visibility: hidden;
 }
 
-.settings .reset{
+.settings .reset {
   color: var(--white);
   background: var(--orange);
 }
 
-.settings .reset:hover{
+.settings .reset:hover {
   color: var(--white);
   background: var(--blue-3);
 }
 
-.settings .reset:active{
+.settings .reset:active {
   background: var(--blue-4);
 }
