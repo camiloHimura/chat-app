@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./InputHandler.css";
-import Button from "./../Button";
+import Button from "./../generals/Button";
 import { addMessage } from "../../state/actions";
 import { KEY_ENTER } from "../../contans";
 import { IO_BROADCAST, SOCKET } from "../../contans";

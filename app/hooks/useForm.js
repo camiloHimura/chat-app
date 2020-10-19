@@ -9,10 +9,10 @@ export default (initialValues, dependencies = []) => {
 
   const handler = (event) => {
     let value = event.target.value;
-    if (event.target.value === "true") {
+    if (event.target.value.toLocaleLowerCase() === "true") {
       value = true;
     }
-    if (event.target.value === "false") {
+    if (event.target.value.toLocaleLowerCase() === "false") {
       value = false;
     }
     setValues({ ...values, [event.target.name]: value });

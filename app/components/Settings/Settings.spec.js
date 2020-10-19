@@ -6,37 +6,15 @@ jest.mock("socket.io-client");
 
 const resetSettings = jest.fn();
 const saveSettings = jest.fn();
+const toggleSettings = jest.fn();
 
 describe("Settings render", () => {
   let component;
 
-  it("time format 12 is cheked", () => {
-    component = setUp({ timeFormat: "12" });
-    const input = findByTestAttr(component, "time-12").getElement();
-    expect(input.props.checked).toBe(true);
-  });
-
-  it("time format 24 is cheked", () => {
-    component = setUp({ timeFormat: "24" });
-    const input = findByTestAttr(component, "time-24").getElement();
-    expect(input.props.checked).toBe(true);
-  });
-
-  it("shortcut true is cheked", () => {
-    component = setUp({ shortcut: true });
-    const input = findByTestAttr(component, "shorcut-true").getElement();
-    expect(input.props.checked).toBe(true);
-  });
-
-  it("shortcut false is cheked", () => {
-    component = setUp({ shortcut: false });
-    const input = findByTestAttr(component, "shorcut-false").getElement();
-    expect(input.props.checked).toBe(true);
-  });
-
   describe("Events", () => {
     beforeEach(() => {
       resetSettings.mockClear();
+      toggleSettings.mockClear();
     });
 
     it("changing saveSettings", () => {
@@ -48,6 +26,7 @@ describe("Settings render", () => {
 
       component = setUp({
         saveSettings,
+        toggleSettings,
         timeFormat: camilo.timeFormat,
         shortcut: camilo.shortcut,
         userName: camilo.userName,
@@ -55,6 +34,7 @@ describe("Settings render", () => {
 
       findByTestAttr(component, "btn-save").simulate("click");
       expect(saveSettings).toHaveBeenCalledWith(camilo);
+      expect(toggleSettings).toHaveBeenCalledWith(false);
     });
 
     it("changing resetSettings", () => {
@@ -72,6 +52,7 @@ function setUp(props = {}) {
     timeFormat: "",
     saveSettings: () => {},
     resetSettings: () => {},
+    toggleSettings: () => {},
     ...props,
   };
   return shallow(<Settings {...initialProps} />);
