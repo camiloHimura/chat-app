@@ -6,7 +6,7 @@ import { useEnter } from "../../../hooks";
 
 function InputText(props) {
   const { name, onChange, value, onEnter = () => {} } = props;
-  const [handler] = useEnter(onEnter);
+  const handler = useEnter(onEnter);
 
   return (
     <Input
@@ -14,6 +14,7 @@ function InputText(props) {
       name={name}
       value={value}
       type="text"
+      data-test="text"
       onKeyDown={handler}
       onChange={onChange}
     />

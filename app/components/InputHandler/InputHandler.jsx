@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./InputHandler.css";
 import Button from "./../generals/Button";
+import EnhancedInputText from "./../generals/EnhancedInputText";
 import { addMessage } from "../../state/actions";
-import { KEY_ENTER } from "../../contans";
 import { IO_BROADCAST, SOCKET } from "../../contans";
+import { useEnhancedEnter } from "../../hooks";
 
 const mapStateToProps = (state) => ({
   shortcut: state.settings.shortcut,
@@ -18,7 +19,7 @@ const mapDispachToProps = (dispatch) => ({
 
 export function InputHandler(props) {
   const { shortcut, userName, addMessage } = props;
-  const inputText = React.useRef(null);
+  const inputText = React.useRef("");
 
   useEffect(() => {
     SOCKET.on(IO_BROADCAST, (data) => {
@@ -28,18 +29,7 @@ export function InputHandler(props) {
     return () => SOCKET.disconnect();
   }, []);
 
-  function keyDown(event) {
-    if (!shortcut && event.keyCode === KEY_ENTER) {
-      event.preventDefault();
-      validateMessage();
-    }
-
-    const isControlPress = event.ctrlKey || event.metaKey;
-    if (shortcut && isControlPress && event.keyCode === KEY_ENTER) {
-      event.preventDefault();
-      validateMessage();
-    }
-  }
+  const enterHandler = useEnhancedEnter(!shortcut, validateMessage);
 
   function validateMessage() {
     const text = inputText.current.innerText;
@@ -56,14 +46,11 @@ export function InputHandler(props) {
 
   return (
     <div className="inputHandler">
-      <span
-        data-test="text"
-        className="input"
-        role="textbox"
+      <EnhancedInputText
         ref={inputText}
-        onKeyDown={keyDown}
-        contentEditable={true}
-      ></span>
+        className="input"
+        onEnter={enterHandler}
+      />
       <Button
         text="Send"
         className="button"

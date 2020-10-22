@@ -2,7 +2,6 @@ import React from "react";
 import { shallow } from "enzyme";
 import { InputHandler } from "./InputHandler";
 import { findByTestAttr } from "../../utils/test";
-import { KEY_ENTER } from "../../contans";
 jest.mock("socket.io-client");
 
 const addMessage = jest.fn();
@@ -24,7 +23,8 @@ describe("InputHandler render", () => {
     });
   });
 
-  it("shortcut: false, Enter, send the message", () => {
+  //Todo Move to useEnhancedEnter test
+  /*   it("shortcut: false, Enter, send the message", () => {
     component = setUp({ shortcut: false, addMessage });
 
     const textArea = findByTestAttr(component, "text");
@@ -57,7 +57,7 @@ describe("InputHandler render", () => {
     });
     expect(preventDefault).toHaveBeenCalled();
     expect(addMessage).toHaveBeenCalled();
-  });
+  }); */
 
   it("click send, send the message", () => {
     const userName = "name test";

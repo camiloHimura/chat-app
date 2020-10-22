@@ -1,19 +1,24 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Button from "../Button";
+import InputText from "../InputText";
+import { findByTestAttr } from "../../../utils/test";
 jest.mock("socket.io-client");
 
-describe("Button render", () => {
-  const text = "test text";
-  const spyClick = jest.fn();
-  const Component = shallow(<Button text={text} onClick={spyClick} />);
+describe("InputText render", () => {
+  let component;
 
-  it("rendering text", () => {
-    expect(Component.text()).toEqual(text);
-  });
-
-  it("calling click prop", () => {
-    Component.find("button").simulate("click");
-    expect(spyClick).toHaveBeenCalled();
+  it("input type is text", () => {
+    component = setUp();
+    expect(findByTestAttr(component, "text").prop("type")).toBe("text");
   });
 });
+
+function setUp(props = {}) {
+  const initialProps = {
+    value: "",
+    name: "",
+    onChange: () => {},
+    ...props,
+  };
+  return shallow(<InputText {...initialProps} />);
+}

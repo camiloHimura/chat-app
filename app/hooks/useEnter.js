@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { KEY_ENTER } from "../contans";
 
 export default (onEnter) => {
@@ -9,5 +8,5 @@ export default (onEnter) => {
     }
   }
 
-  return [handler];
+  return handler;
 };
