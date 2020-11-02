@@ -1,13 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Loader.css';
+import React from "react";
+import PropTypes from "prop-types";
+import "./Loader.css";
 
-function Loader() {  
-  return <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+function Loader({ isVisible = false }) {
+  return (
+    <div
+      className="lds-ring"
+      style={{ visibility: isVisible ? "visible" : "hidden" }}
+    >
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 }
 
-Loader.propTypes = {
-  
-}
+Loader.propTypes = {};
 
 export default Loader;

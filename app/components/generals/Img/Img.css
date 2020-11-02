@@ -1,7 +1,8 @@
-.contImg{
+.contImg {
   max-width: 200px;
 }
 
-.contImg img{
+.contImg img {
   width: 100%;
+  transition: opacity 400ms ease 0ms;
 }
