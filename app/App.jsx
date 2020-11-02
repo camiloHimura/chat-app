@@ -15,15 +15,8 @@ function App() {
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--container-max-height",
-      `${size.width}px`
+      `${size.height}px`
     );
-
-    window.addEventListener("resize", () => {
-      document.documentElement.style.setProperty(
-        "--container-max-height",
-        `${size.height}px`
-      );
-    });
   }, [size]);
 
   return (
