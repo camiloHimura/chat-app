@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Loader.css";
 
-function Loader({ isVisible = false }) {
+function Loader({ isVisible = false, className = "" }) {
   return (
     <div
-      className="lds-ring"
-      style={{ visibility: isVisible ? "visible" : "hidden" }}
+      className={`lds-ring ${className}`}
+      style={{ display: isVisible ? "block" : "none" }}
     >
       <div></div>
       <div></div>

@@ -15,22 +15,20 @@ describe("Img", () => {
   });
 
   it("state updated after loading the image", (done) => {
-    const spySetSrc = jest.fn();
-    const srcTest = "test Value";
-
-    React.useState = (src) => [src, spySetSrc];
+    const spySetIsLoaded = jest.fn();
+    React.useState = (src) => [src, spySetIsLoaded];
 
     global.Image = class Image {
       constructor() {
         setTimeout(() => {
           this.onload();
-          expect(spySetSrc).toHaveBeenCalledWith(srcTest);
+          expect(spySetIsLoaded).toHaveBeenCalledWith(true);
           done();
         }, 0);
       }
     };
 
-    component = setUp({ src: srcTest });
+    component = setUp({ src: "test Value" });
   });
 });
 
