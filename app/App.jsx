@@ -1,26 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 
 import "./App.css";
 import Nav from "./components/Nav";
 import Messages from "./components/Messages";
 import InputHandler from "./components/InputHandler";
-import Modal from "./components/Modal";
-import Settings from "./components/Settings";
+import { useWindoResize } from "./hooks";
+
+const Modal = React.lazy(() => import("./components/Modal"));
+const Settings = React.lazy(() => import("./components/Settings"));
 
 function App() {
+  const size = useWindoResize();
+
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--container-max-height",
-      `${window.innerHeight}px`
+      `${size.width}px`
     );
 
     window.addEventListener("resize", () => {
       document.documentElement.style.setProperty(
         "--container-max-height",
-        `${window.innerHeight}px`
+        `${size.height}px`
       );
     });
-  }, []);
+  }, [size]);
 
   return (
     <div className="MyChat">
@@ -29,9 +33,11 @@ function App() {
         <Messages />
         <InputHandler />
 
-        <Modal>
-          <Settings />
-        </Modal>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Modal>
+            <Settings />
+          </Modal>
+        </Suspense>
       </div>
     </div>
   );
