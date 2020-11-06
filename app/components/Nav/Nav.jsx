@@ -14,6 +14,7 @@ export function Nav(props) {
   return (
     <nav>
       <h1 data-test="name">{props.name}</h1>
+      <a href="/modal">Modal</a>
       <Button
         text="Setting"
         className="button"

@@ -1,16 +1,10 @@
-var path = require("path");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const RouteManifest = require("webpack-route-manifest");
 
 module.exports = {
   entry: ["babel-polyfill", "./app/index.js"],
-  output: {
-    publicPath: "/",
-    filename: "index_bundle.js",
-    path: path.resolve(__dirname, "public"),
-    assetModuleFilename: "assets/[hash][ext][query]",
-  },
   module: {
     rules: [
       {
@@ -36,6 +30,12 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env.PORT": JSON.stringify(process.env.PORT),
       "process.env.API_URL": JSON.stringify(process.env.API_URL),
+    }),
+    new RouteManifest({
+      routes: {
+        "./components/Modal": "/modal",
+        "./components/Settings": "/settings",
+      },
     }),
   ],
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, Suspense } from "react";
+import { withQuicklink } from "quicklink/dist/react/hoc.js";
 
 import "./App.css";
 import Nav from "./components/Nav";
@@ -11,6 +12,9 @@ const Settings = React.lazy(() => import("./components/Settings"));
 
 function App() {
   const size = useWindoResize();
+  const options = {
+    origins: [],
+  };
 
   useEffect(() => {
     document.documentElement.style.setProperty(
@@ -18,6 +22,9 @@ function App() {
       `${size.height}px`
     );
   }, [size]);
+
+  const Info = withQuicklink(Settings, options);
+  const ModalInfo = withQuicklink(Modal, options);
 
   return (
     <div className="MyChat">
@@ -27,9 +34,9 @@ function App() {
         <InputHandler />
 
         <Suspense fallback={<div>Loading...</div>}>
-          <Modal>
-            <Settings />
-          </Modal>
+          <ModalInfo>
+            <Info />
+          </ModalInfo>
         </Suspense>
       </div>
     </div>
